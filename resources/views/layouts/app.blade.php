@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Moon') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -16,6 +16,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -25,7 +26,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
+            {{ config('app.name', 'CINEMA MOON') }}
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -60,17 +61,23 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/movies') }}">Películas</a>
                         </li>
-
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/movies.viewTable') }}">Tabla de Películas</a>
+                            <a class="nav-link" href="{{ url('/movies.viewTable/') }}">Tabla de Peliculas</a>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/entrances') }}">Entradas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/cineFunctions') }}">Funciones</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/rooms') }}">Salas</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/consumables') }}">Consumibles</a>
                         </li>
+
+                        
                         <li class="nav-item">
                             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                         </li>
@@ -113,7 +120,7 @@
 
 <main>
     @yield('content')
-    @include('layouts.footer')
+{{--    @include('layouts.footer')--}}
 </main>
 
 

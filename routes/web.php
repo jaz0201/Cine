@@ -24,6 +24,8 @@ Route::resources([
     'movies' => 'MovieController',
     'consumables' => 'ConsumableController',
     'rooms' => 'RoomController',
+    'entrances' => 'EntranceController',
+    'cineFunctions' => 'CineFunctionController'
 ]);
 
 

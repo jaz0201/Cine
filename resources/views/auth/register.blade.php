@@ -1,17 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
+
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
+               <!-- <div class="card-header">{{ __('Register') }}</div>-->
+               <div class="row">
+                
+                    <div class="container">
+                      <h1 class="name">Register</h1>
+                
+                <link href="{{ asset('css/styles2.css') }}" rel="stylesheet">
+                <div align="center" class="alinearCentro">
+                    <img class="rounded-circle imagenCard" src="{{ asset('logos/luna.jpg') }}" alt="">
+                   </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row">
+                            
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
@@ -73,5 +85,6 @@
             </div>
         </div>
     </div>
+
 </div>
 @endsection

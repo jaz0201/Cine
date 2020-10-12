@@ -18,7 +18,7 @@
                 <div class="carousel-caption text-left">
                     <h1>The cruds 2</h1>
                     <p>Es una próxima película estadounidense de aventuras y comedia animada...</p>
-                    <p><a class="btn btn-lg btn-primary" href=""  role="button">Compra tu entrada</a></p>
+                    <a class="btn btn-lg btn-primary" href="{{ url('/entrances')}}"  role="button">Compra tu entrada</a></p>
                 </div>
             </div>
         </div>
