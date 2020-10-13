@@ -3,21 +3,21 @@
 @section('title', 'Ver detalles de funciones')
 
 @section('content')
-
+<br><br>
 
         <div class="row">
             <div class="card col-sm bg-light" style="width: 18rem;">
-                <img src="img/8.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $CineFunction->start }}</h5>
-                    <h3 class="card-text">{{ $CineFunction->end }}</h3>
-                    <p class="card-text">{{ $CineFunction->available }}</p>
-                    <p class="card-text text-muted">{{ $CineFunction->label }}</p>
-                   {{-- <div>
-                    <form action="{{ route('cineFunctions.destroy', $CineFunction ->id) }}" method="post">
+               
+                <div class="card-body"> 
+                    <h5 class="card-title">{{ $cineFunction->start }}</h5>
+                    <h3 class="card-text">{{ $cineFunction->end }}</h3>
+                    <p class="card-text">{{ $cineFunction->available }}</p>
+                    <p class="card-text text-muted">{{ $cineFunction->label }}</p>
+                   <div>
+                    <form action="{{ route('cineFunctions.destroy', $cineFunction ->id) }}" method="post">
                        
-                        <a class="btn btn-secondary" href="{{ route('cineFunctions.index', $CineFunction->id) }}">Volver</a>
-                        <a class="btn btn-secondary" href="{{ route('cineFunctions.edit', $CineFunction->id) }}">Editar</a>
+                        <a class="btn btn-secondary" href="{{ route('cineFunctions.index', $cineFunction->id) }}">Volver</a>
+                        <a class="btn btn-secondary" href="{{ route('cineFunctions.edit', $cineFunction->id) }}">Editar</a>
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Eliminar</button>
@@ -30,7 +30,8 @@
 
         <br>
 
-@endsection--}}
+@endsection
+{{--
 <div>
     <form action="{{ route('cineFunctions.destroy', $CineFunction->id) }}" method="post">
 
@@ -80,4 +81,4 @@
 <br>
 
 @endsection
-
+--}}

@@ -4,7 +4,7 @@
 <h1>No hay funciones disponibles :( </h1>
 
 @endforelse--}}
-@extends('layouts.app')
+@extends('layout.layout')
 @section('title','Funciones')
 @section('content')
     
@@ -23,20 +23,21 @@
 </div>
 <br><br>
 
-@forelse($cineFunctions as $CineFunction)
+@forelse($cineFunctions as $cineFunction)
   <div class="row">
       <div class="card col-sm bg-light" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
+        {{--  <img src="logos/luna.jpg" class="card-img-top" alt="200px">--}}
+          <img src="{{ asset('logos/luna.jpg') }}" width="200px" alt="">
           
           <div class="card-body">
 
-              <h3 class="card-title">{{ $CineFunction->start }}</h3>
-              <h5 class="card-text">{{ $CineFunction->end }}</h5>
-              <p class="card-text">{{ $CineFunction->available }}</p>
-              <p class="card-text text-muted">{{ $CineFunction->level }}</p>
-              <form action="{{ route('cineFunctions.destroy', $CineFunction->id) }}" method="post">
-                  <a class="btn btn-secondary" href="{{ route('cineFunctions.show', $CineFunction->id) }}">Ver</a>
-                  <a class="btn btn-secondary" href="{{ route('cineFunctions.edit', $CineFunction->id) }}">Editar</a>
+              <h3 class="card-title">{{ $cineFunction->start }}</h3>
+              <h5 class="card-text">{{ $cineFunction->end }}</h5>
+              <p class="card-text">{{ $cineFunction->available }}</p>
+              <p class="card-text text-muted">{{ $cineFunction->level }}</p>
+              <form action="{{ route('cineFunctions.destroy', $cineFunction->id) }}" method="post">
+                  <a class="btn btn-secondary" href="{{ route('cineFunctions.show', $cineFunction->id) }}">Ver</a>
+                  <a class="btn btn-secondary" href="{{ route('cineFunctions.edit', $cineFunction->id) }}">Editar</a>
                   @csrf
                   @method('DELETE')
                   <button type="submit" class="btn btn-danger">Eliminar</button>

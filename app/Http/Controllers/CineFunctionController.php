@@ -13,10 +13,10 @@ class CineFunctionController extends Controller
      */
     public function index()
     {
-       // $cineFunctions = CineFunction::all(); //consulta
+        $cineFunctions = CineFunction::all(); //consulta
       //return view('cineFunctions.index', compact ('cineFunctions')); 
       
-        $cineFunctions = DB::table('cineFunctions')->paginate(2);
+       // $cineFunctions = DB::table('cineFunctions')->paginate(2);
        return view('cineFunctions.index', compact ('cineFunctions'));
     }
 
@@ -49,9 +49,9 @@ class CineFunctionController extends Controller
      * @param  \App\CineFunction  $cineFunction
      * @return \Illuminate\Http\Response
      */
-    public function show(CineFunction $CineFunction)
+    public function show(CineFunction $cineFunction)
     {
-        return view('cineFunctions.show',compact ('CineFunction'));
+        return view('cineFunctions.show',compact ('cineFunction'));
     }
 
     /**
@@ -60,9 +60,9 @@ class CineFunctionController extends Controller
      * @param  \App\CineFunction  $cineFunction
      * @return \Illuminate\Http\Response
      */
-    public function edit(CineFunction $CineFunction)
+    public function edit(CineFunction $cineFunction)
     {
-        return view ('cineFunctions.edit',compact ('CineFunction'));
+        return view ('cineFunctions.edit',compact ('cineFunction'));
     }
 
     /**
@@ -77,7 +77,7 @@ class CineFunctionController extends Controller
         $request->validate(
             [
                 'start'      => 'required',
-                'end'  => '',
+                'end'  => 'required',
                 'available'  => 'required',
                 'level'     => 'required'
             ]  
@@ -94,9 +94,9 @@ class CineFunctionController extends Controller
      * @param  \App\CineFunction  $cineFunction
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CineFunction $CineFunction)
+    public function destroy(CineFunction $cineFunction)
     {
-        $CineFunction->delete();
+        $cineFunction->delete();
         return redirect()->route('cineFunctions.index');
     }
 }

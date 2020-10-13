@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout.layout')
 
 @section('title','Editar Funciones')
 @section('content')
