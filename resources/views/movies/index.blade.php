@@ -20,7 +20,8 @@
 @forelse($movies as $movie)
   <div class="row">
       <div class="card col-sm bg-light" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
+       <!--   <img src="logos/luna.jpg" class="card-img-top" alt="200px">-->
+          <img src="{{ asset('logos/emogi.jpg') }}" width="200px" alt="">
           
           <div class="card-body">
 

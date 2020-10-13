@@ -9,11 +9,14 @@
 
 <div>
     <a href="{{route('consumables.create')}}">
-    <button class="btn btn-primary">Agregar</button>
+       
+    <button class="btn btn-primary">Agregar</button> 
+    <br><br>
 </a>
 </div>
 <table class="table table-responsive-md"><!--danger -->
     <thead>
+        
         <th>ID</th>
         <th>Articulo</th>
         <th>Precio</th>

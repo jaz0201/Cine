@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\CineFunction;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class CineFunctionController extends Controller
 {
     /**
@@ -14,8 +13,11 @@ class CineFunctionController extends Controller
      */
     public function index()
     {
-        $cineFunctions = CineFunction::all(); //consulta
-        return view('cineFunctions.index', compact ('cineFunctions')); 
+       // $cineFunctions = CineFunction::all(); //consulta
+      //return view('cineFunctions.index', compact ('cineFunctions')); 
+      
+        $cineFunctions = DB::table('cineFunctions')->paginate(2);
+       return view('cineFunctions.index', compact ('cineFunctions'));
     }
 
     /**
@@ -25,7 +27,7 @@ class CineFunctionController extends Controller
      */
     public function create()
     {
-        //
+        return view ('cineFunctions.create');
     }
 
     /**
@@ -36,7 +38,9 @@ class CineFunctionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    
+        CineFunction:: create($request->all());
+        return redirect()->route('cineFunctions.index');
     }
 
     /**
@@ -45,9 +49,9 @@ class CineFunctionController extends Controller
      * @param  \App\CineFunction  $cineFunction
      * @return \Illuminate\Http\Response
      */
-    public function show(CineFunction $cineFunction)
+    public function show(CineFunction $CineFunction)
     {
-        //
+        return view('cineFunctions.show',compact ('CineFunction'));
     }
 
     /**
@@ -56,9 +60,9 @@ class CineFunctionController extends Controller
      * @param  \App\CineFunction  $cineFunction
      * @return \Illuminate\Http\Response
      */
-    public function edit(CineFunction $cineFunction)
+    public function edit(CineFunction $CineFunction)
     {
-        //
+        return view ('cineFunctions.edit',compact ('CineFunction'));
     }
 
     /**
@@ -68,9 +72,20 @@ class CineFunctionController extends Controller
      * @param  \App\CineFunction  $cineFunction
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CineFunction $cineFunction)
+    public function update(Request $request, CineFunction $CineFunction)
     {
-        //
+        $request->validate(
+            [
+                'start'      => 'required',
+                'end'  => '',
+                'available'  => 'required',
+                'level'     => 'required'
+            ]  
+        );
+
+        $CineFunction->update($request->all());
+
+        return redirect()->route('cineFunctions.index');
     }
 
     /**
@@ -79,8 +94,9 @@ class CineFunctionController extends Controller
      * @param  \App\CineFunction  $cineFunction
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CineFunction $cineFunction)
+    public function destroy(CineFunction $CineFunction)
     {
-        //
+        $CineFunction->delete();
+        return redirect()->route('cineFunctions.index');
     }
 }

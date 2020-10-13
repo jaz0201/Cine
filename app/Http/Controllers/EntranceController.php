@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Entrance;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class EntranceController extends Controller
 {
@@ -14,7 +16,9 @@ class EntranceController extends Controller
      */
     public function index()
     {
-        $entrances = Entrance::all(); //consulta
+       /* $entrances = Entrance::all(); //consulta
+        return view('entrances.index', compact ('entrances'));*/
+        $entrances = DB::table('entrances')->paginate(5);
         return view('entrances.index', compact ('entrances'));
     }
 
@@ -25,7 +29,7 @@ class EntranceController extends Controller
      */
     public function create()
     {
-        //
+        return view('entrances.create');
     }
 
     /**
@@ -36,7 +40,14 @@ class EntranceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+       
+        'room',
+        'price',
+        'hour'
+            ]);
+            Entrance::create($request->all());
+            return redirect()->route('entrances.index');
     }
 
     /**
@@ -47,7 +58,7 @@ class EntranceController extends Controller
      */
     public function show(Entrance $entrance)
     {
-        //
+        return view('entrances.show',compact('entrance'));
     }
 
     /**
@@ -58,7 +69,7 @@ class EntranceController extends Controller
      */
     public function edit(Entrance $entrance)
     {
-        //
+        return view('entrances.edit', compact('entrance'));
     }
 
     /**
@@ -70,7 +81,8 @@ class EntranceController extends Controller
      */
     public function update(Request $request, Entrance $entrance)
     {
-        //
+        $entrance->update($request->all());
+        return redirect()->route('entrances.index');
     }
 
     /**
@@ -81,6 +93,7 @@ class EntranceController extends Controller
      */
     public function destroy(Entrance $entrance)
     {
-        //
+        $entrance->delete();
+        return redirect()->route('entrances.index');
     }
 }
