@@ -29,7 +29,7 @@ class CineFunctionController extends Controller
     {
         return view ('cineFunctions.create');
     }
-
+//jaz
     /**
      * Store a newly created resource in storage.
      *
