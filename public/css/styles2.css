@@ -50,6 +50,8 @@ body{
 		 color:    #fff;
 		font-weight: 300;
 	}
+	
+
 }
 
 .wrapper{
@@ -70,46 +72,57 @@ background: linear-gradient(to bottom right, #000 0%, #fff 100%);
 	padding-top:20px;
 	&.form-success{
 		.container{
+			
       
 			h1{
         font-size:48px;
         color:#111;
 				transform: translateY(100px);
+		
+		
+	
 			}
 		}
 	}
+	
 }
+
 
 .card{
-	  background:
-        linear-gradient( 180deg, transparent 10%, rgba(0, 0, 0, 0.1) 10% ),
-        linear-gradient( 180deg, transparent 20%, rgba(0, 0, 0, 0.1) 20% ),
-        linear-gradient( 180deg, transparent 30%, rgba(0, 0, 0, 0.1) 30% ),
-        linear-gradient( 180deg, transparent 40%, rgba(0, 0, 0, 0.1) 40% ),
-        linear-gradient( 180deg, transparent 50%, rgba(0, 0, 0, 0.1) 50% ),
-        linear-gradient( 180deg, transparent 60%, rgba(0, 0, 0, 0.1) 60% ),
-        linear-gradient( 180deg, transparent 70%, rgba(0, 0, 0, 0.1) 70% ),
-        linear-gradient( 180deg, transparent 80%, rgba(0, 0, 0, 0.1) 80% ),
-        linear-gradient( 90deg, transparent 90%, rgba(0, 0, 0, 0.1) 90% ),
-        linear-gradient( 90deg, transparent 100%, rgba(0, 0, 0, 0.1) 100% )
-        rgb(177, 166, 166);
+	background:
+	  linear-gradient( 180deg, transparent 10%, rgba(0, 0, 0, 0.1) 10% ),
+	  linear-gradient( 180deg, transparent 20%, rgba(0, 0, 0, 0.1) 20% ),
+	  linear-gradient( 180deg, transparent 30%, rgba(0, 0, 0, 0.1) 30% ),
+	  linear-gradient( 180deg, transparent 40%, rgba(0, 0, 0, 0.1) 40% ),
+	  linear-gradient( 180deg, transparent 50%, rgba(0, 0, 0, 0.1) 50% ),
+	  linear-gradient( 180deg, transparent 60%, rgba(0, 0, 0, 0.1) 60% ),
+	  linear-gradient( 180deg, transparent 70%, rgba(0, 0, 0, 0.1) 70% ),
+	  linear-gradient( 180deg, transparent 80%, rgba(0, 0, 0, 0.1) 80% ),
+	  linear-gradient( 90deg, transparent 90%, rgba(0, 0, 0, 0.1) 90% ),
+	  linear-gradient( 90deg, transparent 100%, rgba(0, 0, 0, 0.1) 100% )
+	  rgb(177, 166, 166);
 
-    width: 700px;
-	margin: 0 auto;
-	padding-top: 80px ;
-	height: 500px;
-	text-align: center;
-	
-    border: 1px solid #333;
-   box-shadow: 10px 10px 5px #000;
-	
-	h1{
-		font-size: 40px;
-		transition-duration: 2s;
-		transition-timing-function: ease-in-out;
-		font-weight: 400;
-	}
+  width: 700px;
+  margin: 0 auto;
+  padding-top: 80px ;
+  height: 500px;
+  text-align: center;
+  
+  border: 1px solid #333;
+ box-shadow: 10px 10px 5px #000;
+  
+  h1{
+	  font-size: 40px;
+	  transition-duration: 2s;
+	  transition-timing-function: ease-in-out;
+	  font-weight: 400;
+  }
 }
+
+
+
+
+
 
 form{
 	padding: 0px 0;
@@ -278,14 +291,14 @@ form{
 
   
 @-webkit-keyframes square {
-  0%   { transform: translateY(0); background-color: fade(white, 0%);
+  0%   { transform: translateY(0); background-color: fade(gray, 0%);
 		 }
-  100% { transform: translateY(-100px);background-color: fade(white, 100%);
+  100% { transform: translateY(-100px);background-color: fade(gray, 100%);
 		  }
 }
 @keyframes square {
-  0%   { transform: translateY(0); background-color: fade(white, 100%);
+  0%   { transform: translateY(0); background-color: fade(gray, 100%);
 		}
-  100% { transform: translateY(-500px) ; background-color: fade(white, 0%);
+  100% { transform: translateY(-500px) ; background-color: fade(gray, 0%);
 		}
 }
